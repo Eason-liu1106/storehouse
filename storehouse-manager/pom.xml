@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>cqnu.storehouse</groupId>
+    <artifactId>storehouse-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>cqnu.storehouse</groupId>
+  <artifactId>storehouse-manager</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <dependencies>
+  	<dependency>
+  		  <groupId>cqnu.storehouse</groupId>
+		  <artifactId>storehouse-common</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  <modules>
+  	<module>storehouse-manager-pojo</module>
+  	<module>storehouse-manager-dao</module>
+  	<module>storehouse-manager-service</module>
+  	<module>storehouse-manager-web</module>
+  </modules>
+  
+  <build>
+		<plugins>
+			<!-- 配置Tomcat插件 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				
+				<configuration>
+					<port>8082</port>
+					<path>/storehouse</path>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
