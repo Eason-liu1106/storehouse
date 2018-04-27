@@ -12996,3 +12996,240 @@ Caused by: org.hibernate.MappingException: Association references unmapped class
 [INFO][2018-04-23 18:33:50,955][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'storehouse-manager-servlet': startup date [Mon Apr 23 18:33:48 CST 2018]; parent: Root WebApplicationContext
 [INFO][2018-04-23 18:33:51,119][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'storehouse-manager-servlet': startup date [Mon Apr 23 18:33:48 CST 2018]; parent: Root WebApplicationContext
 [INFO][2018-04-23 18:33:51,423][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'storehouse-manager': initialization completed in 2660 ms
+[INFO][2018-04-27 09:05:38,607][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO][2018-04-27 09:05:38,728][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Apr 27 09:05:38 CST 2018]; root of context hierarchy
+[INFO][2018-04-27 09:05:38,768][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from file [E:\Git_Repository\storehouse\storehouse-manager\storehouse-manager-web\target\classes\spring\applicationContext-dao.xml]
+[INFO][2018-04-27 09:05:38,992][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from file [E:\Git_Repository\storehouse\storehouse-manager\storehouse-manager-web\target\classes\spring\applicationContext-service.xml]
+[INFO][2018-04-27 09:05:39,100][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from file [E:\Git_Repository\storehouse\storehouse-manager\storehouse-manager-web\target\classes\spring\applicationContext-trans.xml]
+[INFO][2018-04-27 09:05:39,573][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from file [E:\Git_Repository\storehouse\storehouse-manager\storehouse-manager-web\target\classes\resource\db.properties]
+[INFO][2018-04-27 09:05:39,574][org.springframework.context.support.PropertySourcesPlaceholderConfigurer]Loading properties file from file [E:\Git_Repository\storehouse\storehouse-manager\storehouse-manager-web\target\classes\hibernate\config.properties]
+[INFO][2018-04-27 09:05:39,584][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[ERROR][2018-04-27 09:05:39,861][com.alibaba.druid.pool.DruidAbstractDataSource]maxIdle is deprecated
+[INFO][2018-04-27 09:05:39,942][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+[INFO][2018-04-27 09:05:40,165][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+[INFO][2018-04-27 09:05:40,173][org.hibernate.Version]HHH000412: Hibernate Core {4.2.4.Final}
+[INFO][2018-04-27 09:05:40,176][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+[INFO][2018-04-27 09:05:40,178][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+[INFO][2018-04-27 09:05:40,888][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[INFO][2018-04-27 09:05:40,900][org.hibernate.engine.jdbc.internal.LobCreatorBuilder]HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+[INFO][2018-04-27 09:05:41,000][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+[INFO][2018-04-27 09:05:41,007][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+[INFO][2018-04-27 09:05:41,358][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+[INFO][2018-04-27 09:05:41,358][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+[INFO][2018-04-27 09:05:41,361][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+[INFO][2018-04-27 09:05:44,772][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.calculate
+[INFO][2018-04-27 09:05:44,772][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, name, id, createdatetime, mon]
+[INFO][2018-04-27 09:05:44,773][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:44,773][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:44,798][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.customers
+[INFO][2018-04-27 09:05:44,798][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, licence, paycost, code, address, postcode, remark, recvcost, contactman, answerman, help, bank, phone, www, name, taxcode, id, createdatetime, fax, intercoursetypeid, email, account]
+[INFO][2018-04-27 09:05:44,798][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:44,798][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:44,818][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.echarts
+[INFO][2018-04-27 09:05:44,818][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [data, name, id]
+[INFO][2018-04-27 09:05:44,818][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:44,818][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:44,839][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.in_item
+[INFO][2018-04-27 09:05:44,839][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, item_cat_name, num, name, store_name, in_user_name, id, createdatetime, supplier_name, brand, rental]
+[INFO][2018-04-27 09:05:44,839][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:44,839][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:44,870][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.in_item_detail
+[INFO][2018-04-27 09:05:44,871][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, flag, description, in_store_id, actualnumber, item_param_item_id, in_item_id, move_store_id, id, brand, measureunit_id, in_user_id, pay, rental, warn, item_cat_id, rack_id, money, parent_item_id, calculate_id, time, position, createdatetime, bulk, supplier_id, status, checknumber]
+[INFO][2018-04-27 09:05:44,872][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: [fk_3jyomf5mxn8fg1e74x4vjbbew, fk_ogny9yavcn3sfn2agut7vxlbc, fk_9xfdyukgtm1ckmr8oxrn3iljn, fk_ho2nyj5yr9jb7w37br536o2ji, fk_flku018x89yyrukvofqtrivkr, fk_2fvor5wtby1o1r5vr1yvbyq7h, fk_7lr353y3xlrhnas26dwq2i7bu, fk_4ep14h251ytpxonn242hq1rr7, fk_j4v25ycuvhrc5m7ugi25chu7c, fk_qss56s0uec2ryha3cxfnprf47]
+[INFO][2018-04-27 09:05:44,873][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [fk_ogny9yavcn3sfn2agut7vxlbc, fk_3jyomf5mxn8fg1e74x4vjbbew, fk_9xfdyukgtm1ckmr8oxrn3iljn, fk_ho2nyj5yr9jb7w37br536o2ji, fk_flku018x89yyrukvofqtrivkr, fk_2fvor5wtby1o1r5vr1yvbyq7h, fk_7lr353y3xlrhnas26dwq2i7bu, fk_4ep14h251ytpxonn242hq1rr7, fk_j4v25ycuvhrc5m7ugi25chu7c, fk_qss56s0uec2ryha3cxfnprf47, primary]
+[INFO][2018-04-27 09:05:44,899][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.item_cat
+[INFO][2018-04-27 09:05:44,899][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, parent_id, name, id, createdatetime, is_parent, sort_order, status]
+[INFO][2018-04-27 09:05:44,899][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:44,899][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:44,921][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.item_param
+[INFO][2018-04-27 09:05:44,922][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, item_cat_id, param_data, id, createdatetime]
+[INFO][2018-04-27 09:05:44,922][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:44,922][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [item_cat_id, primary]
+[INFO][2018-04-27 09:05:44,945][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.item_param_item
+[INFO][2018-04-27 09:05:44,946][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, in_item_id, item_id, param_data, id, createdatetime]
+[INFO][2018-04-27 09:05:44,946][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:44,946][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:44,969][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.measureunits
+[INFO][2018-04-27 09:05:44,969][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, name, remark, id, createdatetime]
+[INFO][2018-04-27 09:05:44,969][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:44,969][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:44,991][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.out_item
+[INFO][2018-04-27 09:05:44,991][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [out_store_name, modifydatetime, item_cat_name, out_user_name, num, name, id, createdatetime, customer_name, brand]
+[INFO][2018-04-27 09:05:44,992][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:44,992][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:45,012][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.out_item_detail
+[INFO][2018-04-27 09:05:45,012][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, item_cat_id, flag, in_item_id, out_item_id, out_store_id, description, out_user_id, id, createdatetime, customer_id]
+[INFO][2018-04-27 09:05:45,012][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: [fk_t78hc2202ql2n9sr4antjxxwv, fk_qmqvgk4tmgg9rhdqefjvr2pkw, fk_tbncs77o2ou1f642b1nfe1fyg, fk_hbfypyindim2j87qrct43bilq, fk_ba4mj3twl01s6del3o31dprb5]
+[INFO][2018-04-27 09:05:45,013][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [fk_t78hc2202ql2n9sr4antjxxwv, fk_qmqvgk4tmgg9rhdqefjvr2pkw, fk_tbncs77o2ou1f642b1nfe1fyg, fk_hbfypyindim2j87qrct43bilq, fk_ba4mj3twl01s6del3o31dprb5, primary]
+[INFO][2018-04-27 09:05:45,034][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.rack
+[INFO][2018-04-27 09:05:45,034][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, parm, name, id, createdatetime]
+[INFO][2018-04-27 09:05:45,034][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:45,034][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:45,055][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.store_type
+[INFO][2018-04-27 09:05:45,056][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, name, description, id, createdatetime]
+[INFO][2018-04-27 09:05:45,056][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:45,056][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:45,083][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.stores
+[INFO][2018-04-27 09:05:45,083][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, rack_id, smallstock, iffull, name, description, bigstock, id, calculate_id, createdatetime, stock, store_type_id]
+[INFO][2018-04-27 09:05:45,083][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: [stores_ibfk_1, stores_ibfk_3, stores_ibfk_2]
+[INFO][2018-04-27 09:05:45,083][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [rack_id, calculate_id, store_type_id, primary]
+[INFO][2018-04-27 09:05:45,108][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.suppliers
+[INFO][2018-04-27 09:05:45,108][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [modifydatetime, licence, paycost, code, address, postcode, remark, recvcost, contactman, answerman, help, bank, phone, www, name, taxcode, id, createdatetime, fax, intercoursetypeid, email, account]
+[INFO][2018-04-27 09:05:45,108][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:45,108][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:45,129][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.sys_permission
+[INFO][2018-04-27 09:05:45,130][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [percode, sortstring, name, parentids, available, id, type, url, parentid]
+[INFO][2018-04-27 09:05:45,130][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:45,130][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:45,150][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.sys_role
+[INFO][2018-04-27 09:05:45,150][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [name, available, id]
+[INFO][2018-04-27 09:05:45,150][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:45,150][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:45,171][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.sys_role_permission
+[INFO][2018-04-27 09:05:45,171][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [sys_role_id, id, sys_permission_id]
+[INFO][2018-04-27 09:05:45,171][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: [fk_piw2cwl7ttajaocomc57a2qm6, fk_9wk75st9hv9swloj8pk1ai4ao]
+[INFO][2018-04-27 09:05:45,172][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [fk_piw2cwl7ttajaocomc57a2qm6, fk_9wk75st9hv9swloj8pk1ai4ao, primary]
+[INFO][2018-04-27 09:05:45,192][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.sys_user
+[INFO][2018-04-27 09:05:45,192][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [password, salt, name, id, usercode, locked, username]
+[INFO][2018-04-27 09:05:45,192][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+[INFO][2018-04-27 09:05:45,192][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+[INFO][2018-04-27 09:05:45,212][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.sys_user_role
+[INFO][2018-04-27 09:05:45,212][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [sys_role_id, sys_user_id, id]
+[INFO][2018-04-27 09:05:45,212][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: [fk_6f9b4tctvitjohj2kf78lecqv, fk_4g3xaxekp82khxr2q1601rb7]
+[INFO][2018-04-27 09:05:45,212][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [fk_6f9b4tctvitjohj2kf78lecqv, fk_4g3xaxekp82khxr2q1601rb7, primary]
+[INFO][2018-04-27 09:05:45,231][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.sys_role_permission
+[INFO][2018-04-27 09:05:45,231][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [sys_role_id, id, sys_permission_id]
+[INFO][2018-04-27 09:05:45,231][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: [fk_piw2cwl7ttajaocomc57a2qm6, fk_9wk75st9hv9swloj8pk1ai4ao]
+[INFO][2018-04-27 09:05:45,231][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [fk_piw2cwl7ttajaocomc57a2qm6, fk_9wk75st9hv9swloj8pk1ai4ao, primary]
+[INFO][2018-04-27 09:05:45,250][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: storehouse.sys_user_role
+[INFO][2018-04-27 09:05:45,250][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [sys_role_id, sys_user_id, id]
+[INFO][2018-04-27 09:05:45,250][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: [fk_6f9b4tctvitjohj2kf78lecqv, fk_4g3xaxekp82khxr2q1601rb7]
+[INFO][2018-04-27 09:05:45,250][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [fk_6f9b4tctvitjohj2kf78lecqv, fk_4g3xaxekp82khxr2q1601rb7, primary]
+[INFO][2018-04-27 09:05:45,253][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+[INFO][2018-04-27 09:05:45,348][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2018-04-27 09:05:39",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1354115475, ConnectTime:"2018-04-27 09:05:40", UseCount:2, LastActiveTime:"2018-04-27 09:05:45"}
+	]
+}] of Hibernate SessionFactory for HibernateTransactionManager
+[INFO][2018-04-27 09:05:45,565][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 6943 ms
+[INFO][2018-04-27 09:05:45,594][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'storehouse-manager': initialization started
+[INFO][2018-04-27 09:05:45,596][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'storehouse-manager-servlet': startup date [Fri Apr 27 09:05:45 CST 2018]; parent: Root WebApplicationContext
+[INFO][2018-04-27 09:05:45,597][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring/spring-mvc.xml]
+[INFO][2018-04-27 09:05:45,798][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO][2018-04-27 09:05:46,097][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/calculateManager/add]}" onto public java.lang.String com.storehouse.controller.CalculateController.addCalculateManager()
+[INFO][2018-04-27 09:05:46,098][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/calculateManager/edit]}" onto public java.lang.String com.storehouse.controller.CalculateController.editCalculateManager()
+[INFO][2018-04-27 09:05:46,099][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/calculate/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.CalculateController.getCalculateList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,100][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/calculate/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.CalculateController.addCalculate(com.storehouse.model.CalculateModel)
+[INFO][2018-04-27 09:05:46,100][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/calculateManager/list]}" onto public java.lang.String com.storehouse.controller.CalculateController.calculateManager()
+[INFO][2018-04-27 09:05:46,100][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/calculate/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.CalculateController.editCalculate(com.storehouse.model.CalculateModel)
+[INFO][2018-04-27 09:05:46,100][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/calculate/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.CalculateController.deleteCalculate(java.lang.String)
+[INFO][2018-04-27 09:05:46,101][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/customerManager/add]}" onto public java.lang.String com.storehouse.controller.CustomerController.addCustomerManager()
+[INFO][2018-04-27 09:05:46,101][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/customerManager/edit]}" onto public java.lang.String com.storehouse.controller.CustomerController.editCustomerManager()
+[INFO][2018-04-27 09:05:46,102][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/customer/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.CustomerController.addCustomer(com.storehouse.pojo.Customers)
+[INFO][2018-04-27 09:05:46,102][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/customer/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.CustomerController.getCustomerList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,102][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/customerManager/list]}" onto public java.lang.String com.storehouse.controller.CustomerController.customerManager()
+[INFO][2018-04-27 09:05:46,102][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/customer/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.CustomerController.editCustomer(com.storehouse.pojo.Customers)
+[INFO][2018-04-27 09:05:46,102][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/customer/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.CustomerController.deleteStore(java.lang.String)
+[INFO][2018-04-27 09:05:46,113][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/echarts/storename]}" onto public com.storehouse.model.StoreNames com.storehouse.controller.EchartsController.names(java.lang.String,int,int)
+[INFO][2018-04-27 09:05:46,113][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/echarts/InItem/storeId]}" onto public com.storehouse.common.pojo.EchartsResult com.storehouse.controller.EchartsController.getInItemChartById(java.lang.String)
+[INFO][2018-04-27 09:05:46,113][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/echarts/OutItem/storeId]}" onto public com.storehouse.common.pojo.EchartsResult com.storehouse.controller.EchartsController.getOutItemChartById(java.lang.String)
+[INFO][2018-04-27 09:05:46,114][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/echarts/MoveItem/storeId]}" onto public com.storehouse.common.pojo.EchartsResult com.storehouse.controller.EchartsController.getMoveItemChartById(java.lang.String)
+[INFO][2018-04-27 09:05:46,114][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/echarts/inEchart]}" onto public java.lang.String com.storehouse.controller.EchartsController.inEchart()
+[INFO][2018-04-27 09:05:46,114][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/echarts/outEchart]}" onto public java.lang.String com.storehouse.controller.EchartsController.outEchart()
+[INFO][2018-04-27 09:05:46,114][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/echarts/moveEchart]}" onto public java.lang.String com.storehouse.controller.EchartsController.moveEchart()
+[INFO][2018-04-27 09:05:46,116][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItemManager/edit]}" onto public java.lang.String com.storehouse.controller.InItemController.editInItemManager()
+[INFO][2018-04-27 09:05:46,116][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItemManager/detail]}" onto public java.lang.String com.storehouse.controller.InItemController.detailInItemManager()
+[INFO][2018-04-27 09:05:46,116][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItemManager/move]}" onto public java.lang.String com.storehouse.controller.InItemController.moveInItemManager()
+[INFO][2018-04-27 09:05:46,116][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItemDetail]}" onto public com.storehouse.model.InItemDetailModel com.storehouse.controller.InItemController.getInItemDetailById(java.lang.String,javax.servlet.http.HttpSession)
+[INFO][2018-04-27 09:05:46,117][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItemDetail/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.InItemController.getInItemDetailList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,117][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItem/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.InItemController.getInItemList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,117][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItem]}" onto public com.storehouse.pojo.InItem com.storehouse.controller.InItemController.getInItemById(java.lang.String)
+[INFO][2018-04-27 09:05:46,117][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItem/add],methods=[POST]}" onto private com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.InItemController.addInItem(com.storehouse.model.InItemDetailModel,com.storehouse.pojo.InItem,java.lang.String,javax.servlet.http.HttpSession,java.lang.String,java.lang.String) throws java.lang.Exception
+[INFO][2018-04-27 09:05:46,117][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItem/move],methods=[POST]}" onto private com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.InItemController.moveInItem(com.storehouse.model.MoveIntemModel,javax.servlet.http.HttpSession) throws java.lang.Exception
+[INFO][2018-04-27 09:05:46,118][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItemManager/add]}" onto public java.lang.String com.storehouse.controller.InItemController.addInItemManager()
+[INFO][2018-04-27 09:05:46,118][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItemManager/list]}" onto public java.lang.String com.storehouse.controller.InItemController.inItemManager()
+[INFO][2018-04-27 09:05:46,118][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItem/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.InItemController.deleteInItem(java.lang.String)
+[INFO][2018-04-27 09:05:46,118][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inItem/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.InItemController.editInItem(com.storehouse.model.InItemDetailModel,com.storehouse.pojo.InItem,java.lang.String)
+[INFO][2018-04-27 09:05:46,119][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/item/cat/list]}" onto private java.util.List<com.storehouse.common.pojo.EUTreeNode> com.storehouse.controller.ItemCatController.getCatList(java.lang.Long)
+[INFO][2018-04-27 09:05:46,119][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/itemCatManager/list]}" onto public java.lang.String com.storehouse.controller.ItemCatController.storeManager()
+[INFO][2018-04-27 09:05:46,120][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/item/param/query/itemcatid]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.ItemParamController.getItemParamByCid(java.lang.Long)
+[INFO][2018-04-27 09:05:46,120][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/item/param/save]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.ItemParamController.insertItemParam(java.lang.Long,java.lang.String)
+[INFO][2018-04-27 09:05:46,121][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/showitem/{itemId}]}" onto public java.lang.String com.storehouse.controller.ItemParamItemController.showItemParam(java.lang.String,org.springframework.ui.Model)
+[INFO][2018-04-27 09:05:46,122][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/validate]}" onto public java.lang.String com.storehouse.controller.LoginController.validate(com.storehouse.pojo.SysUser,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpSession) throws java.lang.Exception
+[INFO][2018-04-27 09:05:46,122][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/login]}" onto public java.lang.String com.storehouse.controller.LoginController.login()
+[INFO][2018-04-27 09:05:46,122][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/logout]}" onto public java.lang.String com.storehouse.controller.LoginController.logout(javax.servlet.http.HttpSession)
+[INFO][2018-04-27 09:05:46,122][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/portal]}" onto public java.lang.String com.storehouse.controller.LoginController.portal()
+[INFO][2018-04-27 09:05:46,123][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/measureunitManager/list]}" onto public java.lang.String com.storehouse.controller.MeasureunitController.measureunitManager()
+[INFO][2018-04-27 09:05:46,123][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/measureunitManager/add]}" onto public java.lang.String com.storehouse.controller.MeasureunitController.addMeasureunitManager()
+[INFO][2018-04-27 09:05:46,123][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/measureunitManager/edit]}" onto public java.lang.String com.storehouse.controller.MeasureunitController.editMeasureunitManager()
+[INFO][2018-04-27 09:05:46,123][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/measureunit/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.MeasureunitController.getMeasureunitList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,124][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/measureunit/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.MeasureunitController.addMeasureunit(com.storehouse.pojo.Measureunits)
+[INFO][2018-04-27 09:05:46,124][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/measureunit/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.MeasureunitController.deleteStore(java.lang.String)
+[INFO][2018-04-27 09:05:46,124][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/measureunit/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.MeasureunitController.editMeasureunit(com.storehouse.pojo.Measureunits)
+[INFO][2018-04-27 09:05:46,125][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/outItemManager/add]}" onto public java.lang.String com.storehouse.controller.OutItemController.addOutItemManager()
+[INFO][2018-04-27 09:05:46,125][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/outItemManager/edit]}" onto public java.lang.String com.storehouse.controller.OutItemController.editOutItemManager()
+[INFO][2018-04-27 09:05:46,125][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/outItemManager/moveoutItem]}" onto public java.lang.String com.storehouse.controller.OutItemController.moveoutItemManager()
+[INFO][2018-04-27 09:05:46,125][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/outItemManager/detailOutItem]}" onto public java.lang.String com.storehouse.controller.OutItemController.detailOutItemManager()
+[INFO][2018-04-27 09:05:46,125][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/outItem/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.OutItemController.getoutItemList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,125][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/outItem/add],methods=[POST]}" onto private com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.OutItemController.addoutItem(com.storehouse.model.OutItemModel,javax.servlet.http.HttpSession) throws java.lang.Exception
+[INFO][2018-04-27 09:05:46,126][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/outItemManager/list]}" onto public java.lang.String com.storehouse.controller.OutItemController.outItemManager()
+[INFO][2018-04-27 09:05:46,126][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/permission/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.PermissionController.addPermission(com.storehouse.pojo.SysPermission)
+[INFO][2018-04-27 09:05:46,126][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/permission/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.PermissionController.getPermissionList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,127][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/permission/tree]}" onto public java.util.List<com.storehouse.model.PermssionTreeModel> com.storehouse.controller.PermissionController.getPermissionTree(java.lang.String)
+[INFO][2018-04-27 09:05:46,127][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/permission/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.PermissionController.editPermission(com.storehouse.pojo.SysPermission)
+[INFO][2018-04-27 09:05:46,127][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/permissionManager/list]}" onto public java.lang.String com.storehouse.controller.PermissionController.userManager()
+[INFO][2018-04-27 09:05:46,127][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/permission/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.PermissionController.deletePermission(java.lang.String)
+[INFO][2018-04-27 09:05:46,128][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rack/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.RackController.addRack(com.storehouse.model.RackModel)
+[INFO][2018-04-27 09:05:46,128][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rack/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.RackController.getRackList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,128][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rackManager/list]}" onto public java.lang.String com.storehouse.controller.RackController.rackManager()
+[INFO][2018-04-27 09:05:46,128][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rackManager/add]}" onto public java.lang.String com.storehouse.controller.RackController.addRackManager()
+[INFO][2018-04-27 09:05:46,129][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rackManager/edit]}" onto public java.lang.String com.storehouse.controller.RackController.editRackManager()
+[INFO][2018-04-27 09:05:46,129][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rack/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.RackController.editRack(com.storehouse.model.RackModel)
+[INFO][2018-04-27 09:05:46,129][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/rack/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.RackController.deleteRack(java.lang.String)
+[INFO][2018-04-27 09:05:46,130][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/role/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.RoleController.addRole(com.storehouse.model.RoleModel)
+[INFO][2018-04-27 09:05:46,130][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/role/tree]}" onto public java.util.List<com.storehouse.model.PermssionTreeModel> com.storehouse.controller.RoleController.getRoleTree(java.lang.String)
+[INFO][2018-04-27 09:05:46,130][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/roleManager/list]}" onto public java.lang.String com.storehouse.controller.RoleController.userManager()
+[INFO][2018-04-27 09:05:46,130][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/role/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.RoleController.getRoleList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,130][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/roleManager/add]}" onto public java.lang.String com.storehouse.controller.RoleController.addUserManager()
+[INFO][2018-04-27 09:05:46,131][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/roleManager/edit]}" onto public java.lang.String com.storehouse.controller.RoleController.editUserManager()
+[INFO][2018-04-27 09:05:46,131][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/role/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.RoleController.editRole(com.storehouse.model.RoleModel)
+[INFO][2018-04-27 09:05:46,131][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/role/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.RoleController.deleteRole(java.lang.String)
+[INFO][2018-04-27 09:05:46,132][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/store/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.StoresController.addStore(com.storehouse.model.StoreModel)
+[INFO][2018-04-27 09:05:46,132][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/store/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.StoresController.getStoresList(com.storehouse.model.StoreModel)
+[INFO][2018-04-27 09:05:46,132][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/store/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.StoresController.deleteStore(java.lang.String)
+[INFO][2018-04-27 09:05:46,132][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeManager/list]}" onto public java.lang.String com.storehouse.controller.StoresController.storeManager()
+[INFO][2018-04-27 09:05:46,133][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeManager/edit]}" onto public java.lang.String com.storehouse.controller.StoresController.editStoreManager()
+[INFO][2018-04-27 09:05:46,133][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeManager/add]}" onto public java.lang.String com.storehouse.controller.StoresController.addStoreManager()
+[INFO][2018-04-27 09:05:46,133][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/store/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.StoresController.editStore(com.storehouse.model.StoreModel)
+[INFO][2018-04-27 09:05:46,134][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeTypeManager/add]}" onto public java.lang.String com.storehouse.controller.StoreTypeController.addStoreTypeManager()
+[INFO][2018-04-27 09:05:46,134][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeTypeManager/edit]}" onto public java.lang.String com.storehouse.controller.StoreTypeController.editStoreTypeManager()
+[INFO][2018-04-27 09:05:46,134][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeType/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.StoreTypeController.getStoreTypeList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,134][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeType/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.StoreTypeController.addStoreType(com.storehouse.model.StoreTypeModel)
+[INFO][2018-04-27 09:05:46,134][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeTypeManager/list]}" onto public java.lang.String com.storehouse.controller.StoreTypeController.storeTypeManager()
+[INFO][2018-04-27 09:05:46,134][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeType/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.StoreTypeController.editStoreType(com.storehouse.model.StoreTypeModel)
+[INFO][2018-04-27 09:05:46,134][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/storeType/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.StoreTypeController.deleteStoreType(java.lang.String)
+[INFO][2018-04-27 09:05:46,136][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/supplierManager/add]}" onto public java.lang.String com.storehouse.controller.SupplierController.addSupplierManager()
+[INFO][2018-04-27 09:05:46,136][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/supplierManager/edit]}" onto public java.lang.String com.storehouse.controller.SupplierController.editSupplierManager()
+[INFO][2018-04-27 09:05:46,136][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/supplier/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.SupplierController.getSupplierList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,136][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/supplier/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.SupplierController.addSupplier(com.storehouse.pojo.Suppliers)
+[INFO][2018-04-27 09:05:46,136][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/supplier/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.SupplierController.deleteStore(java.lang.String)
+[INFO][2018-04-27 09:05:46,136][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/supplier/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.SupplierController.editStore(com.storehouse.pojo.Suppliers)
+[INFO][2018-04-27 09:05:46,137][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/supplierManager/list]}" onto public java.lang.String com.storehouse.controller.SupplierController.supplierManager()
+[INFO][2018-04-27 09:05:46,138][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/add]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.UserController.addUser(com.storehouse.model.UserModel,java.lang.String,java.lang.String)
+[INFO][2018-04-27 09:05:46,138][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/index]}" onto public java.lang.String com.storehouse.controller.UserController.login()
+[INFO][2018-04-27 09:05:46,138][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userManager/add]}" onto public java.lang.String com.storehouse.controller.UserController.addUserManager()
+[INFO][2018-04-27 09:05:46,138][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userManager/edit]}" onto public java.lang.String com.storehouse.controller.UserController.editUserManager()
+[INFO][2018-04-27 09:05:46,138][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/list]}" onto public com.storehouse.common.pojo.EUDataGridResult com.storehouse.controller.UserController.getUserList(com.storehouse.model.BaseModel)
+[INFO][2018-04-27 09:05:46,138][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userManager/list]}" onto public java.lang.String com.storehouse.controller.UserController.UserManager()
+[INFO][2018-04-27 09:05:46,138][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/edit]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.UserController.editUser(com.storehouse.model.UserModel)
+[INFO][2018-04-27 09:05:46,139][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/user/delete]}" onto public com.storehouse.common.pojo.StorehouseResult com.storehouse.controller.UserController.deleteUser(java.lang.String)
+[INFO][2018-04-27 09:05:46,523][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'storehouse-manager-servlet': startup date [Fri Apr 27 09:05:45 CST 2018]; parent: Root WebApplicationContext
+[INFO][2018-04-27 09:05:46,579][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'storehouse-manager-servlet': startup date [Fri Apr 27 09:05:45 CST 2018]; parent: Root WebApplicationContext
+[INFO][2018-04-27 09:05:46,710][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'storehouse-manager': initialization completed in 1116 ms
