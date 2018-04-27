@@ -119,6 +119,7 @@ var store_Datagrid= $('input[name="storeId"]').combogrid({
     	    valueField:'position',
     	    textField:'position'
     	});
+    	$('input[name="storeName"]').val(rowData.name);
     	//$('input[name="position"]').combobox('reload', url);
     	
         }  ,
