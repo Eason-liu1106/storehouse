@@ -187,15 +187,19 @@ public class InItemServiceImpl extends BaseServiceImpl implements InItemService 
 		BeanUtils.copyProperties(inItemDetailModel, inItemDetail);
 //		inItemDetailModel.setInUserId(null);
 //		inItemDetail.setInUserId(inItemDetailModel.getInUserId());
-		inItem=inItemDao.get(InItem.class, inItem.getId());
+		InItem inItem2=inItemDao.get(InItem.class, inItem.getId());
+		BeanUtils.copyProperties(inItem, inItem2);
 		System.out.println("inItemDetail的id:"+inItemDetail.getId());
-		inItem.setRental(finRental);
+		inItem2.setRental(finRental);
+		
 		inItemDetail.setInItem(inItem);
 		inItemDetail.setItemCat(itemCatDao.get(ItemCat.class, inItemDetailModel.getItemCatId()));
 		inItemDetail.setMeasureunits(measureunitDao.get(Measureunits.class,inItemDetailModel.getMeasureunitId()));
 		inItemDetail.setStores(storesDao.get(Stores.class, inItemDetailModel.getStoreId()));
 		inItemDetail.setSuppliers(SuppliersDao.get(Suppliers.class, inItemDetailModel.getSupplierId()));
 		inItemDetail.setRental(finRental);
+		inItemDetail.setActualnumber(inItem.getNum());
+		inItemDetail.setFlag(1);
 		boolean result=inItemDetailDao.update(inItemDetail);
 		if(result==true)
 		{
@@ -309,6 +313,7 @@ public class InItemServiceImpl extends BaseServiceImpl implements InItemService 
 			s.setMoveStore(storesDao.get(Stores.class, moveInItemModel.getMoveStoreId()));//???
 //			s.setStores(storesDao.get(Stores.class,moveInItemModel.getStoreId()));//不成功
 			BeanUtils.copyProperties(s, inItemDetail);
+			inItemDetail.setStores(s.getMoveStore());
 			inItemDetail.setInItem(inItem);
 			inItemDetail.setActualnumber(moveInItemModel.getMovenum());
 			inItemDetail.setDescription(moveInItemModel.getDescription());
@@ -322,7 +327,7 @@ public class InItemServiceImpl extends BaseServiceImpl implements InItemService 
 			inItemDetail.setRental(finRental);
 			String result=(String) inItemDetailDao.save(inItemDetail);	
 			inItemDetail.setParentInItem(parentInItem);
-			
+			inItemDetail.setFlag(1); 
 			if(result.length()>0){
 				if(stores.getStock()==null){//判断将物品移入的那个库中现有库存是否为空，若为空则将所移数量全部赋予它，不为空则使其相加
 					stores.setStock(moveInItemModel.getMovenum()+"");//把当前所移的数量赋予即将移入的那个库中的现有库存
