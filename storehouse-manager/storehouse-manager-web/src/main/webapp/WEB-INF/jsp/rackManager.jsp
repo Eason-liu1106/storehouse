@@ -9,7 +9,10 @@
 	var rack_searchForm;
 	var editRow = undefined;
 	var rack_datagrid; 
+	
+	
 	$(function() {
+		
 		rack_searchForm = $('#rack_searchForm').form();
 			
 		rack_datagrid = $('#rack_datagrid').datagrid({

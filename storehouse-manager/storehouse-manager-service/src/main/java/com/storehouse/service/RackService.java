@@ -5,6 +5,7 @@ package com.storehouse.service;
 import java.io.Serializable;
 import java.util.List;
 
+import com.storehouse.common.pojo.ComBoxResult;
 import com.storehouse.common.pojo.EUDataGridResult;
 import com.storehouse.common.pojo.StorehouseResult;
 import com.storehouse.model.BaseModel;
@@ -18,4 +19,5 @@ public interface RackService  extends BaseService {
 	StorehouseResult  addRack(RackModel rm);
 	StorehouseResult update(RackModel rm);
 	StorehouseResult delete(Serializable ids);
+	List<ComBoxResult> getComBoxRackList(String id);
 }

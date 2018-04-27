@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -12,13 +13,14 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.storehouse.common.pojo.ComBoxResult;
 import com.storehouse.common.pojo.EUDataGridResult;
 import com.storehouse.common.pojo.StorehouseResult;
 import com.storehouse.common.utils.IDUtils;
 import com.storehouse.dao.BaseDaoI;
 import com.storehouse.model.BaseModel;
 import com.storehouse.model.RackModel;
-
+import com.storehouse.pojo.InItemDetail;
 import com.storehouse.pojo.Rack;
 
 import com.storehouse.pojo.custom.RackCustom;
@@ -28,6 +30,8 @@ public class RackServcieImpl  extends BaseServiceImpl implements RackService {
 
 	@Autowired
 	private BaseDaoI<Rack> rackDao;
+	@Autowired
+	private BaseDaoI<InItemDetail> inItemDetailDao;
 	@Override
 	public EUDataGridResult getRackList(BaseModel bm) {
 		// TODO Auto-generated method stub
@@ -120,6 +124,30 @@ public class RackServcieImpl  extends BaseServiceImpl implements RackService {
 			}
 		}
 		return storehouseResult;
+	}
+	@Override
+	public List<ComBoxResult> getComBoxRackList(String id) {
+		// TODO Auto-generated method stub
+		List<ComBoxResult> comBoxResults = new ArrayList<ComBoxResult>();
+		String hql="select b.rack.parm from Stores b where b.id ="+id;
+		String hql2="select a.position from InItemDetail a where a.stores.id="+id;
+		List inItemDetail=inItemDetailDao.getHql(hql2);
+		
+		List rack = rackDao.getHql(hql);
+		Integer length=Integer.parseInt( (String)rack.get(0));
+		List rackNum=new ArrayList();
+		for(int i=1 ;i<=length;i++) {
+			rackNum.add(String.valueOf(i));
+		}
+		rackNum.removeAll(inItemDetail);
+		for(int i=0; i<rackNum.size();i++) {
+			ComBoxResult comBoxResult=new ComBoxResult();
+			comBoxResult.setPosition((String)rackNum.get(i));
+			
+			comBoxResults.add(comBoxResult);
+		}
+		
+		return comBoxResults;
 	}
 
 }

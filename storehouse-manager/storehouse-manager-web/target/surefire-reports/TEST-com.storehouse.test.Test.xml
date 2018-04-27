@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="E:\EclipseOxgn3_WorkSpace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1578658634928833677.tmp"/>
+    <property name="classworlds.conf" value="E:\EclipseOxgn3_WorkSpace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf2661532867102452047.tmp"/>
     <property name="sun.jnu.encoding" value="GBK"/>
     <property name="java.library.path" value="E:\java\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;E:/java/jdk/bin/../jre/bin/server;E:/java/jdk/bin/../jre/bin;E:/java/jdk/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\java\jdk\bin;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Git\bin;E:\MySql5.5\bin;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;D:\eclipse-jee-oxygen-3a-win32-x86_64\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>

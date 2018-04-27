@@ -2,12 +2,15 @@ package com.storehouse.controller;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.storehouse.common.pojo.ComBoxResult;
 import com.storehouse.common.pojo.EUDataGridResult;
 import com.storehouse.common.pojo.StorehouseResult;
 import com.storehouse.model.BaseModel;
@@ -68,6 +71,15 @@ public class RackController {
 	public StorehouseResult  deleteRack(String  ids){
 		
 		return rackService.delete(ids);
+		
+	}
+	@RequestMapping("/rack/combox")
+	@ResponseBody
+	public List<ComBoxResult> getComBoxRack(String id){
+	
+		
+		return  rackService.getComBoxRackList(id);
+		
 		
 	}
 

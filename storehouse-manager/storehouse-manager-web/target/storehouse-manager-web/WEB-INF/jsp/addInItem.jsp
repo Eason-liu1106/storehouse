@@ -35,9 +35,12 @@
 	        </tr>
 	        <tr>
 	            <td>商品货架位置:</td>
-	            <td><input class="easyui-textbox" name="position"></input></td>
+	            <td><input class="easyui-combobox"  name="position"></input></td>
 	        </tr>
-	       
+	       <tr>
+	            <td>商品货架位置2:</td>
+	          <td><input id="cc" class="easyui-textbox"></input></td>
+	        </tr>
 	         <tr>
 	            <td>商品计量单位:</td>
 	            <td><input class="easyui-textbox" name="measureunitId"></input></td>
@@ -94,7 +97,11 @@
 	
 //}
 
-
+$('#cc').combobox({
+    url:'${pageContext.request.contextPath}/rack/combox.action?id=1234567',
+    valueField:'position',
+    textField:'position'
+});;
 var store_Datagrid= $('input[name="storeId"]').combogrid({
 	
 	loadMsg : '数据加载中....',
@@ -112,8 +119,11 @@ var store_Datagrid= $('input[name="storeId"]').combogrid({
 	pageSize : 5,
 	pageList : [ 5, 10 ],
     onSelect: function (rowIndex, rowData){  
-    
-    	$('input[name="storeName"]').val(rowData.name);
+    	
+    	var url = '${pageContext.request.contextPath}/rack/combox.action?id='+rowData.id;
+    	
+    	$('input[name="position"]').combobox('reload', url);
+    	
         }  ,
 	columns : [ [ {
 		field : 'id',
