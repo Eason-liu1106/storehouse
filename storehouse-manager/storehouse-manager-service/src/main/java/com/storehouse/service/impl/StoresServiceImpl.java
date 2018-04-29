@@ -27,6 +27,7 @@ import com.storehouse.pojo.Rack;
 import com.storehouse.pojo.StoreType;
 import com.storehouse.pojo.Stores;
 import com.storehouse.pojo.custom.StoresCustom;
+import com.storehouse.service.InItemService;
 import com.storehouse.service.StoresService;
 
 
@@ -45,7 +46,10 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 	private BaseDaoI<InItemDetail> inItemDetailDao;
 	@Autowired
 	private BaseDaoI<InItem> inItemDao;
+	@Autowired
+	private InItemService inItemService;
 	@Override
+	
 	public EUDataGridResult getStoresList(StoreModel sm) {
 		// TODO Auto-generated method stub
 		String  hql="from Stores a";
@@ -151,14 +155,12 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 		
 			for (String id : ((String) ids).split(",")) {
 				Stores s = storesDao.get(Stores.class, id);
-				String hql1=" from InItemDetail where in_store_id="+id;
-				List<InItemDetail> iid=inItemDetailDao.getHql(hql1);
-//				List<InItem> ii=
-//				InItem ii=inItemDao.get(hql2);
-				
-				if (s != null ) {
-//					inItemDetailDao.delete(iid);
-//					inItemDao.delete(ii);
+				if (s != null) {
+					String hql="select s.inItem.id from InItemDetail s where s.stores.id="+id;
+					List list=inItemService.getInItemIdsByStoreId(hql);
+					for(int i=0;i<list.size();i++){
+						inItemService.delete((String)list.get(i));
+					}
 					storesDao.delete(s);
 					
 					storehouseResult.setMsg("删除成功");

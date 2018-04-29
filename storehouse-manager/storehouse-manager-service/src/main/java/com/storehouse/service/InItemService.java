@@ -24,7 +24,7 @@ public interface InItemService extends BaseService{
 	StorehouseResult update(InItemDetailModel inItemDetailModel,InItem inItem, String itemParam);
 	StorehouseResult delete(Serializable ids);
 	StorehouseResult moveInItem(MoveIntemModel moveInItemModel,ActiveUser activeUser,InItemDetailModel inItemDetailModel);
-
+	
 	List getInItemIdsByStoreId(String hql);
 	List getInItemChartByStoreId(String hql);
 }
