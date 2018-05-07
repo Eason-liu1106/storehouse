@@ -5,7 +5,7 @@
     <property name="sun.boot.library.path" value="D:\Java\jdk1.8.0_121\jre\bin"/>
     <property name="java.vm.version" value="25.121-b13"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\GitPro\storehouse\storehouse-manager\storehouse-manager-web"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\GitPro\storehouse\storehouse-manager"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\GitPro\storehouse\storehouse-manager\storehouse-manager-web"/>
+    <property name="user.dir" value="D:\GitPro\storehouse\storehouse-manager"/>
     <property name="java.runtime.version" value="1.8.0_121-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="D:\Java\jdk1.8.0_121\jre\lib\endorsed"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="D:\EclipseWorkSpace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4748186004273390453.tmp"/>
+    <property name="classworlds.conf" value="D:\EclipseWorkSpace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6468440514003335999.tmp"/>
     <property name="sun.jnu.encoding" value="GBK"/>
     <property name="java.library.path" value="D:\Java\jdk1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/Java/jdk1.8.0_121/bin/../jre/bin/server;D:/Java/jdk1.8.0_121/bin/../jre/bin;D:/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Java\jdk1.8.0_121\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\MySql\bin;D:\JavaWeb\apache-maven-3.5.0\bin;D:\Program Files\Git\cmd;D:\eclipse-jee-neon-1a-win32-x86_64\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>

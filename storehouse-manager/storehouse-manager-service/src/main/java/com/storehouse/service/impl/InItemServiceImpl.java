@@ -179,11 +179,11 @@ public class InItemServiceImpl extends BaseServiceImpl implements InItemService 
 		itemParamItem.setModifydatetime(now);
 		itemParamItemDao.save(itemParamItem);
 		inItemDetail.setItemParamItem(itemParamItem);
-		System.out.println("前model"+inItemDetailModel.getId());
+		
 		String hql=" from InItemDetail where in_item_id='"+inItem.getId()+"'";
 		inItemDetail=inItemDetailDao.get(hql);
 		inItemDetailModel.setId(inItemDetail.getId());
-		System.out.println("后"+inItemDetailModel.getId());
+//		System.out.println("后"+inItemDetailModel.getId());
 		BeanUtils.copyProperties(inItemDetailModel, inItemDetail);
 //		inItemDetailModel.setInUserId(null);
 //		inItemDetail.setInUserId(inItemDetailModel.getInUserId());

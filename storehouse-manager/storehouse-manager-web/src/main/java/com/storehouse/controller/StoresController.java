@@ -42,7 +42,6 @@ public class StoresController {
 	@RequestMapping("/store/add")
 	@ResponseBody
 	public StorehouseResult  addStore(StoreModel sm){
-		
 		return storesService.addStore(sm);
 		
 	}

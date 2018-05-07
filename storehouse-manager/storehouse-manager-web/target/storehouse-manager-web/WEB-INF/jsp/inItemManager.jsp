@@ -36,13 +36,16 @@
 				width : 120,
 				sortable : true,
 				checkbox : true
-			}, {
-				title : '商品名称',
-				field : 'name',
-				width : 100,
-				sortable : true,
+			}
+			//, 
+			//{
+			//	title : '商品名称',
+			//	field : 'name',
+			//	width : 100,
+			//	sortable : true,
 				
-			} ] ],
+			//}
+			] ],
 			columns : [ [ {
 				title : '入库仓库',
 				field : 'storeName',

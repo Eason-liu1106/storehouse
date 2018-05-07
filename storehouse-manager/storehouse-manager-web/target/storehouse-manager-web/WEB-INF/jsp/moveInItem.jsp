@@ -3,7 +3,22 @@
   <div style="padding:10px 60px 20px 60px">  
      <form id="moveInItem" method="post">  
          <table cellpadding="10">       
-              
+              <tr>
+	            <td>移库数量:</td>
+	            <td><input class="easyui-numberbox" type="text" name="movenum" data-options="min:1,max:99999999,precision:0,required:true" /></td>
+	        </tr>	        
+             <tr>
+	            <td>商品移库仓库:</td>
+	            <td><input class="easyui-textbox"  name="moveStoreId" ></input></td>
+	        </tr>  
+	         <tr>
+	            <td>库存数量:</td>
+	            <td><input class="easyui-numberbox" type="text" readonly="readonly" name="num" data-options="min:1,max:99999999,precision:0,required:true" /></td>
+	        </tr>
+	         <tr>
+	            <td>商品货架位置:</td>
+	            <td><input id="moveRack" class="easyui-combobox"  name="position"></input></td>
+	        </tr> 
              <tr>
 	            <td>商品类目:</td>
 	            <td>	
@@ -23,10 +38,10 @@
 	            <td>商品品牌:</td>
 	            <td><input class="easyui-textbox"  readonly="readonly" name="brand" ></input></td>
 	        </tr>
-	        <tr>
+	       <!--  <tr>
 	            <td>商品货架位置:</td>
 	            <td><input class="easyui-textbox"   name="position" ></input></td>
-	        </tr>        
+	        </tr> -->  
 	         <tr>
 	            <td>商品供应商:</td>
 	            <td><input class="easyui-textbox" readonly="readonly" name="supplierName" ></input></td>
@@ -46,19 +61,7 @@
 	            <td>商品实付金额:</td>
 	            <td><input class="easyui-textbox" readonly="readonly" name="pay" ></input></td>
 	        </tr>
-	        <tr>
-	            <td>库存数量:</td>
-	            <td><input class="easyui-numberbox" type="text" readonly="readonly" name="num" data-options="min:1,max:99999999,precision:0,required:true" /></td>
-	        </tr>
-	          <tr>
-	            <td>移库数量:</td>
-	            <td><input class="easyui-numberbox" type="text" name="movenum" data-options="min:1,max:99999999,precision:0,required:true" /></td>
-	        </tr>	        
-             <tr>
-	            <td>商品移库仓库:</td>
-	            <td><input class="easyui-textbox"  name="moveStoreId" ></input></td>
-	        </tr>  
-            
+	       
 	       <tr>  
                  <td>描述:</td>  
                  <td><textarea name="description" rows="8" cols="24"></textarea></td>  
@@ -83,6 +86,18 @@ var store_Datagrid= $('input[name="moveStoreId"]').combogrid({
 	pagination : true,
 	pageSize : 5,
 	pageList : [ 5, 10 ],
+	onSelect: function (rowIndex, rowData){  
+    	
+    	var url = '${pageContext.request.contextPath}/rack/combox.action?id='+rowData.id;
+    	$('#moveRack').combobox({
+    	    url:url,
+    	    valueField:'position',
+    	    textField:'position'
+    	});
+    	$('input[name="storeName"]').val(rowData.name);
+    	//$('input[name="position"]').combobox('reload', url);
+    	
+        }  ,
 	columns : [ [ {
 		field : 'id',
 		title : '编号',

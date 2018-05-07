@@ -67,12 +67,7 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 		if (stores != null && stores.size() > 0) {// 转换模型
 			for (Stores store : stores) {
 				StoresCustom storesCustom=new StoresCustom();
-				if(storesCustom.getRemainStock()==null){
-					storesCustom.setRemainStock(Integer.valueOf(store.getBigstock()));
-				}else{
-					storesCustom.setRemainStock(Integer.valueOf(store.getBigstock())-Integer.valueOf(store.getStock()));
-				}
-				
+				storesCustom.setRemainStock(Integer.valueOf(store.getBigstock())-Integer.valueOf(store.getStock()));
 				ChangeModel(store, storesCustom);
 				storesCustoms.add(storesCustom);
 				
@@ -111,6 +106,7 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 			if(s.length()>0)
 			{
 				StoresCustom storesCustom=new StoresCustom();
+				storesCustom.setRemainStock(Integer.valueOf(store.getBigstock()));
 				ChangeModel(store, storesCustom);
 				storehouseResult.setData(storesCustom);
 				storehouseResult.setMsg("添加成功");

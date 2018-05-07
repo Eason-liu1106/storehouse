@@ -32,8 +32,16 @@ public class InItemDetailModel extends BaseModel{
 		private Integer warn;
 		private Integer flag;
 		private String inUserId;
+		private String inUserName;
 		
 		
+		
+		public String getInUserName() {
+			return inUserName;
+		}
+		public void setInUserName(String inUserName) {
+			this.inUserName = inUserName;
+		}
 		public String getInUserId() {
 			return inUserId;
 		}

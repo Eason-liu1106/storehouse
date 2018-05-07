@@ -24,7 +24,7 @@
             <tr>
             <tr>
 	            <td>商品入库仓库:</td>
-	            <td><input class="easyui-textbox" name="storeId" ></input></td>
+	            <td><input class="easyui-textbox"  name="storeId" ></input></td>
 	        </tr>
 	        <tr>
 	            <td>商品品牌:</td>
@@ -36,9 +36,13 @@
 	            <td>商品租期:</td>
 	            <td><input class="easyui-textbox" name="time" ></input></td>
 	        </tr>
-	        <tr>
+	        <!--  <tr>
 	            <td>商品货架位置:</td>
 	            <td><input class="easyui-textbox" name="position" ></input></td>
+	        </tr>-->
+	        <tr>
+	            <td>商品货架位置:</td>
+	            <td><input id="editRack" class="easyui-combobox"  name="position"></input></td>
 	        </tr>
 	         <tr>
 	            <td>商品计量单位:</td>
@@ -48,7 +52,7 @@
 	            <td>商品供应商:</td>
 	            <td><input class="easyui-textbox" name="supplierId" ></input></td>
 	        </tr>
-	      
+	      	
 	         <tr>
 	            <td>商品大小:</td>
 	            <td><input class="easyui-textbox" name="bulk" ></input></td>
@@ -64,8 +68,12 @@
 	            <td><input class="easyui-textbox" name="pay" ></input></td>
 	        </tr>
 	        <tr>
+	            <td>入库负责人:</td>
+	            <td><input class="easyui-textbox" hidden="true" name="inUserName" ></input></td>
+	        </tr>
+	        <tr>
 	            <td>库存数量:</td>
-	            <td><input class="easyui-numberbox" type="text" name="num" data-options="min:1,max:99999999,precision:0,required:true" /></td>
+	            <td><input class="easyui-numberbox" hidden="true" type="text" name="num" data-options="min:1,max:99999999,precision:0,required:true" /></td>
 	        </tr>
 	         
 	        
@@ -105,9 +113,20 @@ var store_Datagrid= $('input[name="storeId"]').combogrid({
 	pagination : true,
 	pageSize : 5,
 	pageList : [ 5, 10 ],
-    onSelect: function (rowIndex, rowData){  
+    //onSelect: function (rowIndex, rowData){  
     
+    	//$('input[name="storeName"]').val(rowData.name);
+        //}  ,
+    onSelect: function (rowIndex, rowData){  
+    	
+    	var url = '${pageContext.request.contextPath}/rack/combox.action?id='+rowData.id;
+    	$('#editRack').combobox({
+    	    url:url,
+    	    valueField:'position',
+    	    textField:'position'
+    	});
     	$('input[name="storeName"]').val(rowData.name);
+    	//$('input[name="position"]').combobox('reload', url);
         }  ,
 	columns : [ [ {
 		field : 'id',
