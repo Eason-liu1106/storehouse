@@ -372,6 +372,7 @@
 								url : '${pageContext.request.contextPath}/store/add.action',
 								data: $('#addStore').serialize(),
 								dataType : 'JSON',
+								type:'POST',
 								success : function(result) {
 									
 										var r = result;
