@@ -158,6 +158,7 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 				Stores s = storesDao.get(Stores.class, id);
 				if (s != null) {
 					String hql="select s.inItem.id from InItemDetail s where s.stores.id="+id;
+					
 					List list=inItemService.getInItemIdsByStoreId(hql);
 					for(int i=0;i<list.size();i++){
 						inItemService.delete((String)list.get(i));
