@@ -17,7 +17,7 @@
 	        </tr>
 	         <tr>
 	            <td>商品货架位置:</td>
-	            <td><input id="moveRack" class="easyui-combobox"  name="position"></input></td>
+	            <td><input id="moveRack" class="easyui-combobox"  name="position" data-options="min:1,max:99999999,precision:0,required:true"></input></td>
 	        </tr> 
              <tr>
 	            <td>商品类目:</td>

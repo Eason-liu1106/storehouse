@@ -191,6 +191,8 @@ public class InItemServiceImpl extends BaseServiceImpl implements InItemService 
 		BeanUtils.copyProperties(inItem, inItem2);
 		System.out.println("inItemDetail的id:"+inItemDetail.getId());
 		inItem2.setRental(finRental);
+		inItem2.setCreatedatetime(inItemDetail.getCreatedatetime());
+		inItem2.setModifydatetime(now);
 		
 		inItemDetail.setInItem(inItem);
 		inItemDetail.setItemCat(itemCatDao.get(ItemCat.class, inItemDetailModel.getItemCatId()));
@@ -200,6 +202,7 @@ public class InItemServiceImpl extends BaseServiceImpl implements InItemService 
 		inItemDetail.setRental(finRental);
 		inItemDetail.setActualnumber(inItem.getNum());
 		inItemDetail.setFlag(1);
+		inItemDetail.setModifydatetime(now);
 		boolean result=inItemDetailDao.update(inItemDetail);
 		if(result==true)
 		{
@@ -250,21 +253,21 @@ public class InItemServiceImpl extends BaseServiceImpl implements InItemService 
 	public EUDataGridResult getInItemDetailList(BaseModel bm) {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
-				String  hql="from InItemDetail a ";
-				String  totalhql="select count(*) from InItemDetail a";
-				Map<String, Object> params=new HashMap<String, Object>();
-				hql=addWhere(bm, hql, params);
-				hql=addOrder(bm, hql);
-				totalhql=addWhere(bm, totalhql, params);
-				EUDataGridResult eUDataGridResult=new EUDataGridResult();
-				
-				List<InItemDetail> InItemDetails= inItemDetailDao.find(hql,params,bm.getPage(),bm.getRows());
-				Long total=inItemDetailDao.count(totalhql,params);
-					
-				eUDataGridResult.setRows(InItemDetails);
-				eUDataGridResult.setTotal(total);
-				
-				return eUDataGridResult;
+		String  hql="from InItemDetail a ";
+		String  totalhql="select count(*) from InItemDetail a";
+		Map<String, Object> params=new HashMap<String, Object>();
+		hql=addWhere(bm, hql, params);
+		hql=addOrder(bm, hql);
+		totalhql=addWhere(bm, totalhql, params);
+		EUDataGridResult eUDataGridResult=new EUDataGridResult();
+		
+		List<InItemDetail> InItemDetails= inItemDetailDao.find(hql,params,bm.getPage(),bm.getRows());
+		Long total=inItemDetailDao.count(totalhql,params);
+			
+		eUDataGridResult.setRows(InItemDetails);
+		eUDataGridResult.setTotal(total);
+		
+		return eUDataGridResult;
 	}
 
 	@Override
@@ -282,8 +285,6 @@ public class InItemServiceImpl extends BaseServiceImpl implements InItemService 
 		   moveInItemModel.getMovenum()<=Integer.valueOf(curStores.getStock())){//保证移库数量不超出目前仓库的现有库存
 			System.out.println("移库月金额"+stores.getCalculate().getMon());
 			System.out.println("移库租期"+inItemDetailModel.getTime());
-			System.out.println("storeid"+moveInItemModel.getStoreId());
-			System.out.println("movestoreid"+moveInItemModel.getMoveStoreId());
 //			System.out.println("itemDetailId"+iidm.getId());
 			
 			int finRental=Integer.valueOf(inItemDetailModel.getTime())*Integer.valueOf(stores.getCalculate().getMon());

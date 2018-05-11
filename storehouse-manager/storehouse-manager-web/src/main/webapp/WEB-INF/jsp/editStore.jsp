@@ -12,7 +12,7 @@ var store_typeDatagrid= $('#store_typeDatagrid').combogrid({
 	idField : 'id',
 	textField : 'name',
 	mode : 'remote',
-	url : '${pageContext.request.contextPath}/storeType.action',
+	url : '${pageContext.request.contextPath}/storeType/list.action',
 	pagination : true,
 	pageSize : 5,
 	pageList : [ 5, 10 ],
@@ -60,7 +60,7 @@ var calculateDatagrid= $('#calculateDatagrid').combogrid({
 	idField : 'id',
 	textField : 'name',
 	mode : 'remote',
-	url : '${pageContext.request.contextPath}/calculate.action',
+	url : '${pageContext.request.contextPath}/calculate/list.action',
 	pagination : true,
 	pageSize : 5,
 	
@@ -109,7 +109,7 @@ var rackDatagrid= $('#rackDatagrid').combogrid({
 	idField : 'id',
 	textField : 'name',
 	mode : 'remote',
-	url : '${pageContext.request.contextPath}/rack.action',
+	url : '${pageContext.request.contextPath}/rack/list.action',
 	pagination : true,
 	pageSize : 5,
 	pageList : [ 5, 10 ],
@@ -160,14 +160,15 @@ var rackDatagrid= $('#rackDatagrid').combogrid({
                  <td>仓库名:</td>  
                  <td><input class="easyui-textbox" type="text" name="name" missingMessage="请填写仓库名称" data-options="required:true"></input></td>  
              </tr>  
-           
-             <tr>  
+           	
+            <!--  <tr>  
                    
                  <td><input hidden="true" style="width: 156px;" name="storeTypeId" missingMessage="请填选择仓库类型" data-options="required:true"></input></td>  
              </tr>
               <tr>  
                 
                  <td><input hidden="true" style="width: 156px;" class="easyui-validatebox" name="calculateId" missingMessage="请选择仓库计费方式" data-options="required:true" ></input></td>  
+             
              </tr>  
              <tr>  
                    
@@ -176,39 +177,70 @@ var rackDatagrid= $('#rackDatagrid').combogrid({
              <tr>  
                    
                  <td><input hidden="true" name="id" missingMessage="请填选择仓库类型" data-options="required:true"></input></td>  
-             </tr>
+             </tr> -->
              <tr>  
                  <td>仓库类型:</td>  
-                 <td><input  id="store_typeDatagrid" name="storeTypeName" missingMessage="请填选择仓库类型" data-options="required:true"></input></td>  
+                 <td><input id="store_typeDatagrid"  missingMessage="请填选择仓库类型"  style="width: 156px;" class="easyui-validatebox" name="storeTypeId" data-options="required:true"></input></td>  
              </tr>
-              <tr>  
-                 <td>计费方式:</td>  
-                 <td><input id="calculateDatagrid" name="calculateName" missingMessage="请选择仓库计费方式" data-options="required:true" ></input></td>  
-             </tr>  
-             <tr>  
-                 <td>货架类型:</td>  
-                 <td><input id="rackDatagrid" name="rackName" missingMessage="请选择货架方式" data-options="required:true" ></input></td>    
-             </tr>    
              <tr>  
                  <td>最大库存:</td>  
                  <td><input class="easyui-textbox" type="text" name="bigstock" missingMessage="请填写最大库存" data-options="required:true"></input></td>  
              </tr>
              <tr>  
-                 <td>最小库存:</td>  
-                 <td><input class="easyui-textbox" type="text" name="smallstock" missingMessage="请填写最小库存" data-options="required:true"></input></td>  
-             </tr>
-             <tr>  
-                 <td>现有库存:</td>  
-                 <td><input class="easyui-textbox" type="text" name="stock" missingMessage="请填写当前库存" data-options="required:true"></input></td>  
+                 <td>计费方式:</td>  
+                 <td><input id="calculateDatagrid" class="easyui-validatebox" name="calculateId" data-options="required:true" ></input></td>
              </tr>
               <tr>  
                  <td>描述:</td>  
                  <td><textarea name="description" rows="8" cols="24"></textarea></td>  
-             </tr>    
+             </tr>  
+             <tr >
+             	<td>
+             		<input hidden="true"  name="storeTypeName" missingMessage="请填选择仓库类型" data-options="required:true"></input>
+             		<!-- <input hidden="true" style="width: 156px;" class="easyui-validatebox" name="calculateId" data-options="required:true" ></input>
+             		 -->
+             		<input hidden="true" style="width: 156px;" class="easyui-validatebox" name="rackId"  data-options="required:true" ></input>
+             		<input hidden="true" name="id"  data-options="required:true"></input>
+             		<input hidden="true" name="rackName" ></input>
+             		<input hidden="true" type="text" name="smallstock" data-options="required:true"></input>
+             		<input hidden="true" type="text" name="stock"  data-options="required:true"></input>
+             		<input hidden="true" type="text" name="iffull"  data-options="required:true"></input>
+             		<input hidden="true" name="calculateName" data-options="required:true" ></input>
+             	
+             	</td>
+             	<!-- <td><input hidden="true" style="width: 156px;" name="storeTypeId" data-options="required:true"></input></td>  
+           		<td><input hidden="true" style="width: 156px;" class="easyui-validatebox" name="calculateId" data-options="required:true" ></input></td>
+           		<td><input hidden="true" style="width: 156px;" class="easyui-validatebox" name="rackId"  data-options="required:true" ></input></td>    
+           		<td><input hidden="true" name="id"  data-options="required:true"></input></td>  
+             	<td><input hidden="true" name="rackName" ></input></td> 
+             	<td><input hidden="true" type="text" name="smallstock" data-options="required:true"></input></td>  
+             	<td><input hidden="true" type="text" name="stock"  data-options="required:true"></input></td>  
+             	<td><input hidden="true" type="text" name="iffull"  data-options="required:true"></input></td>   
+             	<td><input hidden="true" name="calculateName" data-options="required:true" ></input></td>  
+             	 -->
+             </tr>
+           <!-- 
+           <tr>  
+                 <td>计费方式:</td>  
+                 <td><input id="calculateDatagrid" name="calculateName" missingMessage="请选择仓库计费方式" data-options="required:true" ></input></td>  
+             </tr>  
+          <tr>  
+                 <td>货架类型:</td>  
+                 <td><input hidden="true" id="rackDatagrid" name="rackName" ></input></td>    
+           </tr> 
+         <tr>  
+                 <td>最小库存:</td>  
+                 <td><input  class="easyui-textbox" type="text" name="smallstock" missingMessage="请填写最小库存" data-options="required:true"></input></td>  
+             </tr>
+             <tr>  
+                 <td>现有库存:</td>  
+                 <td><input class="easyui-textbox" type="text" name="stock" missingMessage="请填写当前库存" data-options="required:true"></input></td>  
+             </tr> 
              <tr>  
                  <td>是否为空:</td>  
-                 <td><input class="easyui-textbox" type="text" name="iffull" missingMessage="请填写当前库存" data-options="required:true"></input></td>   
+                 <td><input  class="easyui-textbox" type="text" name="iffull" missingMessage="请填写当前库存" data-options="required:true"></input></td>   
              </tr> 
+               --> 
          </table>  
      </form>  
     

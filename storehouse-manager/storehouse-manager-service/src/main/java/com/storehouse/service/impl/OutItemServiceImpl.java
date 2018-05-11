@@ -163,6 +163,8 @@ public class OutItemServiceImpl extends BaseServiceImpl implements OutItemServic
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
 
 	@Override
 	public StorehouseResult update(OutItemModel outItemModel) {
@@ -181,6 +183,8 @@ public class OutItemServiceImpl extends BaseServiceImpl implements OutItemServic
 		// TODO Auto-generated method stub
 		return outItemDao.getHql(hql);
 	}
+
+	
 
 
 

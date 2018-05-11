@@ -19,9 +19,10 @@ public interface StoresService extends BaseService{
 
 	EUDataGridResult getStoresList(StoreModel sm);
 	StorehouseResult  addStore(StoreModel sm);
-	StorehouseResult update(StoreModel sm);
+	StorehouseResult update(StoreModel sm,StoreModel storeModel);
 	StorehouseResult delete(Serializable ids);
 	Stores getStoreById(String id);
 	StoreNames getStoreNames(String id, int page, int rows);
 	Stores judgeStoreName(String param);
+	StoreModel getStoreModelById(String id);
 }

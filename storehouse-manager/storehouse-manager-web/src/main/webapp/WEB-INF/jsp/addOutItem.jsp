@@ -100,10 +100,10 @@
 	            <td><input class="easyui-numberbox" type="text" disabled="disabled" name="num" data-options="min:1,max:99999999,precision:0,required:true" /></td>
 	        </tr>
 	        
-	        <tr>
+	       <!--  <tr>
 	            <td>商品供应商:</td>
 	            <td><input class="easyui-textbox" disabled="disabled" name="customerName" ></input></td>
-	        </tr>
+	        </tr> -->
 	        
 	         <tr>
 	            <td>客户:</td>

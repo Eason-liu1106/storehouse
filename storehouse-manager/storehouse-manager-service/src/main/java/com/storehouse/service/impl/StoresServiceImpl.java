@@ -17,17 +17,20 @@ import com.storehouse.common.pojo.EUDataGridResult;
 import com.storehouse.common.pojo.StorehouseResult;
 import com.storehouse.common.utils.IDUtils;
 import com.storehouse.dao.BaseDaoI;
+import com.storehouse.model.InItemDetailModel;
 import com.storehouse.model.StoreModel;
 import com.storehouse.model.StoreName;
 import com.storehouse.model.StoreNames;
 import com.storehouse.pojo.Calculate;
 import com.storehouse.pojo.InItem;
 import com.storehouse.pojo.InItemDetail;
+import com.storehouse.pojo.OutItemDetail;
 import com.storehouse.pojo.Rack;
 import com.storehouse.pojo.StoreType;
 import com.storehouse.pojo.Stores;
 import com.storehouse.pojo.custom.StoresCustom;
 import com.storehouse.service.InItemService;
+import com.storehouse.service.OutItemService;
 import com.storehouse.service.StoresService;
 
 
@@ -48,6 +51,7 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 	private BaseDaoI<InItem> inItemDao;
 	@Autowired
 	private InItemService inItemService;
+	
 	@Override
 	
 	public EUDataGridResult getStoresList(StoreModel sm) {
@@ -123,11 +127,12 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 		return storehouseResult;
 	}
 	@Override
-	public StorehouseResult update(StoreModel sm) {
+	public StorehouseResult update(StoreModel sm,StoreModel storeModel) {
 		// TODO Auto-generated method stub
 		StorehouseResult storehouseResult=new StorehouseResult();	
 		Stores store=new Stores();	
 		BeanUtils.copyProperties(sm, store);
+		
 		store.setCalculate(calculateDao.get(Calculate.class, sm.getCalculateId()));
 		store.setRack(rackDao.get(Rack.class,sm.getRackId()));
 		store.setStoreType(storeTypeDao.get(StoreType.class, sm.getStoreTypeId()));
@@ -138,9 +143,26 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 		{
 		StoresCustom storesCustom=new StoresCustom();
 		ChangeModel(store, storesCustom);
-		storehouseResult.setData(storesCustom);
-		storehouseResult.setMsg("修改成功");
-		storehouseResult.setStatus(200);
+		
+		if(store.getName()!=null){
+			String hql="from InItem where store_name='"+storeModel.getName()+"'";
+			List<InItem> inItemList=inItemDao.getHql(hql);
+			System.out.println(inItemList.size());
+			System.out.println("前仓库名称："+storeModel.getName());
+			System.out.println("修改过后仓库名称："+storesCustom.getName());
+			InItemDetail inItemDetail=new InItemDetail();
+			for(InItem inItem:inItemList){
+				String hql1="from InItemDetail where in_Item_id='"+inItem.getId()+"'";
+				inItemDetail=inItemDetailDao.get(hql1);
+				inItem.setStoreName(storesCustom.getName());
+				inItem.setRental(Integer.valueOf(inItemDetail.getTime())*Integer.valueOf(store.getCalculate().getMon()));
+				inItemDetail.setRental(inItem.getRental());
+				inItemDao.update(inItem);
+			}
+			storehouseResult.setData(storesCustom);
+			storehouseResult.setMsg("修改成功");
+			storehouseResult.setStatus(200);
+		}
 		
 		}else{
 			storehouseResult.setStatus(404);
@@ -158,9 +180,11 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 				Stores s = storesDao.get(Stores.class, id);
 				if (s != null) {
 					String hql="select s.inItem.id from InItemDetail s where s.stores.id="+id;
-					List list=inItemService.getInItemIdsByStoreId(hql);
-					for(int i=0;i<list.size();i++){
-						inItemService.delete((String)list.get(i));
+					List inItemList=inItemService.getInItemIdsByStoreId(hql);
+					
+					for(int i=0;i<inItemList.size();i++){
+						inItemService.delete((String)inItemList.get(i));
+						
 					}
 					storesDao.delete(s);
 					
@@ -214,6 +238,22 @@ public class StoresServiceImpl  extends BaseServiceImpl implements StoresService
 	public Stores getStoreById(String id) {
 		// TODO Auto-generated method stub
 		return storesDao.get(Stores.class, id);
+	}
+	
+	@Override
+	public StoreModel getStoreModelById(String id) {
+		// TODO Auto-generated method stub
+		String hql="from Stores where id="+id;
+		StoreModel storeModel = new  StoreModel();
+		Stores stores=new Stores();
+		
+		stores=storesDao.get(hql);
+		BeanUtils.copyProperties(stores, storeModel);
+		storeModel.setCalculateId(stores.getCalculate().getId());
+		storeModel.setStoreTypeId(stores.getStoreType().getId());
+		storeModel.setRackId(stores.getRack().getId());
+		
+		return storeModel;
 	}
 	
 }

@@ -2,6 +2,8 @@ package com.storehouse.controller;
 
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.storehouse.common.pojo.EUDataGridResult;
 import com.storehouse.common.pojo.StorehouseResult;
 import com.storehouse.model.StoreModel;
+import com.storehouse.pojo.Stores;
 import com.storehouse.service.StoresService;
 
 
@@ -45,13 +48,22 @@ public class StoresController {
 		return storesService.addStore(sm);
 		
 	}
-	@RequestMapping("/store/edit")
+	@RequestMapping("/storeModel")
 	@ResponseBody
-	public StorehouseResult  editStore(StoreModel sm){
-		
-		return storesService.update(sm);
+	public StoreModel getStoreById(String id,HttpSession session){
+		StoreModel storeModel=storesService.getStoreModelById(id);
+		session.setAttribute("getStoreModelById", storeModel);
+		return storeModel;
 		
 	}
+	@RequestMapping("/store/edit")
+	@ResponseBody
+	public StorehouseResult  editStore(StoreModel sm,HttpSession session){
+		StoreModel storeModel=(StoreModel) session.getAttribute("getStoreModelById");
+		return storesService.update(sm,storeModel);
+		
+	}
+	
 	@RequestMapping("/store/delete")
 	@ResponseBody
 	public StorehouseResult  deleteStore(String  ids){

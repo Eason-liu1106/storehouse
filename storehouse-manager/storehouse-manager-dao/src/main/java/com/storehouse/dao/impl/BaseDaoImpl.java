@@ -177,7 +177,6 @@ public class BaseDaoImpl<T> implements BaseDaoI<T> {
 
 	@Override
 	public List getHql(String hql) {
-		// TODO Auto-generated method stub
 		Query q = this.getCurrentSession().createQuery(hql);
 		List list=new ArrayList<>();
 		list=q.list();

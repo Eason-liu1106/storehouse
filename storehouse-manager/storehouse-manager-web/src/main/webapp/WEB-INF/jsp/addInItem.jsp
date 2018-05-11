@@ -4,7 +4,7 @@
      <form id="addInItem" method="post">  
          <table cellpadding="10">       
              <tr>  
-                   
+                 
                  <td><input hidden="true" style="width: 156px;" name="storeName" data-options="required:true"></input></td>                  
                  <td><input hidden="true" style="width: 156px;" class="easyui-validatebox" name="measureunitName"  data-options="required:true" ></input></td>                    
                  <td><input hidden="true" style="width: 156px;" class="easyui-validatebox" name="supplierName"  data-options="required:true" ></input></td> 
@@ -30,7 +30,7 @@
 	         
 	         
 	        <tr>
-	            <td>商品租期:</td>
+	            <td>商品租期(月):</td>
 	            <td><input class="easyui-textbox" name="time" ></input></td>
 	        </tr>
 	        <tr>

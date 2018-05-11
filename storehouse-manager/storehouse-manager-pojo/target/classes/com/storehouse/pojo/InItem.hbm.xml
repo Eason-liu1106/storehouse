@@ -48,5 +48,6 @@
         	<key column="in_item_id"/>
         	<one-to-many class="InItemDetail"/>
         </set> -->
+       
     </class>
 </hibernate-mapping>

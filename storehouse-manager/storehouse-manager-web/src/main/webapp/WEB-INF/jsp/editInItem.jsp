@@ -8,24 +8,32 @@
                  <td><input hidden="true" style="width: 156px;" name="storeName" data-options="required:true"></input></td>                  
                  <td><input hidden="true" style="width: 156px;" class="easyui-validatebox" name="measureunitName"  data-options="required:true" ></input></td>                    
                  <td><input hidden="true" style="width: 156px;" class="easyui-validatebox" name="supplierName"  data-options="required:true" ></input></td> 
-                 <td>
-                 	<input hidden="true" name="id" data-options="required:true"></input> 
-                 	<input hidden="true"  name="inUserId" data-options="required:true">
-                 </td>
+                 
+	        	 <td>
+	        	 	<input hidden="true" name="itemCatId" style="width: 280px;"></input>
+	            	<input hidden="true" readonly="readonly" name="itemCatName"></input>
+	        	 	<input hidden="true"  name="storeId" data-options="required:true"></input>
+	        	 	<input id="editRack" hidden="true"  name="position"></input>
+	        	 	<input hidden="true" name="id" data-options="required:true"></input> 
+                 	<input hidden="true"  name="inUserId" data-options="required:true"/>
+	        	 	<input  hidden="true" name="inUserName" ></input>
+	        	 	<input  hidden="true" type="text" name="num" data-options="min:1,max:99999999,precision:0,required:true" />
+	        	 </td>
              </tr>   
-             <tr>
+            <!--  <tr>
 	            <td>商品类目:</td>
 	            <td>
 	            	<a href="javascript:void(0)" class="easyui-linkbutton selectItemCat">选择类目</a>
 	            	<input type="hidden" name="itemCatId" style="width: 280px;"></input>
 	            	<input type="text" readonly="readonly" name="itemCatName"></input>
 	            </td>
-	        </tr>	  
-            <tr>
+	        </tr>	 -->  
+         
+            <!-- 
             <tr>
 	            <td>商品入库仓库:</td>
-	            <td><input class="easyui-textbox"  name="storeId" ></input></td>
-	        </tr>
+	            <td><input class="easyui-textbox"  name="storeId" data-options="required:true"></input></td>
+	        </tr> -->
 	        <tr>
 	            <td>商品品牌:</td>
 	            <td><input class="easyui-textbox" name="brand" ></input></td>
@@ -33,17 +41,17 @@
 	         
 	         
 	        <tr>
-	            <td>商品租期:</td>
+	            <td>商品租期(月):</td>
 	            <td><input class="easyui-textbox" name="time" ></input></td>
 	        </tr>
 	        <!--  <tr>
 	            <td>商品货架位置:</td>
 	            <td><input class="easyui-textbox" name="position" ></input></td>
 	        </tr>-->
-	        <tr>
+	       <!--  <tr>
 	            <td>商品货架位置:</td>
 	            <td><input id="editRack" class="easyui-combobox"  name="position"></input></td>
-	        </tr>
+	        </tr> -->
 	         <tr>
 	            <td>商品计量单位:</td>
 	            <td><input class="easyui-textbox" name="measureunitId"></input></td>
@@ -67,16 +75,15 @@
 	            <td>商品实付金额:</td>
 	            <td><input class="easyui-textbox" name="pay" ></input></td>
 	        </tr>
-	        <tr>
+	      <!--   <tr>
 	            <td>入库负责人:</td>
 	            <td><input class="easyui-textbox" hidden="true" name="inUserName" ></input></td>
 	        </tr>
 	        <tr>
 	            <td>库存数量:</td>
 	            <td><input class="easyui-numberbox" hidden="true" type="text" name="num" data-options="min:1,max:99999999,precision:0,required:true" /></td>
-	        </tr>
-	         
-	        
+	        </tr> -->
+	       
               <tr>  
                  <td>描述:</td>  
                  <td><textarea name="description" rows="8" cols="24"></textarea></td>  
@@ -98,7 +105,7 @@
     
  </div>  
 <script type="text/javascript" charset="utf-8">        
-var store_Datagrid= $('input[name="storeId"]').combogrid({
+/*var store_Datagrid= $('input[name="storeId"]').combogrid({
 	loadMsg : '数据加载中....',
 	panelWidth : 440,
 	panelHeight : 180,
@@ -157,7 +164,7 @@ var store_Datagrid= $('input[name="storeId"]').combogrid({
 		 }
 	} ] ],
 	delay : 500
-});
+});*/
 var supplier_Datagrid= $('input[name="supplierId"]').combogrid({
 	loadMsg : '数据加载中....',
 	panelWidth : 440,
@@ -256,7 +263,7 @@ var measureunit_Datagrid= $('input[name="measureunitId"]').combogrid({
 	} ] ],
 	delay : 500
 });
-function Re(){
+/*function Re(){
 	$("<div>").css({padding:"5px"}).html("<ul>")
 	.window({
 		width:'800',
@@ -301,7 +308,7 @@ function Re(){
 	}).window('open');
 
 
-	}
+	}*/
  function changeItemParam(node,formId){
 	
 	$.getJSON("/item/param/query/itemcatid.action/" + node.id,function(data){
@@ -331,9 +338,9 @@ function Re(){
 	  });
 }
  
- $(".selectItemCat").on("click",function(){
+ /*$(".selectItemCat").on("click",function(){
  	 Re(); 	
- });
+ });*/
 
 </script>
 

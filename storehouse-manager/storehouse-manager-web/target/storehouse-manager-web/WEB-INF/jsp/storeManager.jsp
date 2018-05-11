@@ -49,12 +49,12 @@
 				width : 100,
 				
 			},
-			{
-				title : '最小库存',
-				field : 'smallstock',
-				width : 100,
+			//{
+				//title : '最小库存',
+				//field : 'smallstock',
+				//width : 100,
 				
-			},
+			//},
 			{
 				title : '最大库存',
 				field : 'bigstock',
@@ -67,23 +67,23 @@
 				width : 100,
 				
 			},
-			{ 
-				title : '是否为空',
-				field : 'iffull',
-				width : 100,
-				formatter : function(value, row, index) {
-					if(value!=null)
-						{ 
-							if(value='1')
-								return '是';
-							else
-								return '否'
-						}
+			//{ 
+				//title : '是否为空',
+				//field : 'iffull',
+				//width : 100,
+				//formatter : function(value, row, index) {
+					//if(value!=null)
+						//{ 
+							//if(value='1')
+								//return '是';
+							//else
+								//return '否'
+						//}
 				
-				}
+				//}
 				
 				
-			},
+			//},
 		
 			{ 
 				title : '计费方式',
@@ -300,38 +300,42 @@
 					text : '确定',
 					iconCls : 'icon-edit',
 					handler : function() {
-						
-						$('#editStore').form('submit', {
+						$.ajax({
 							url : '${pageContext.request.contextPath}/store/edit.action',
+							data: $('#editStore').serialize(),
+							dataType : 'JSON',
+							type: "POST",
 							success : function(result) {
 								
-									var r = $.parseJSON(result);
-									
-									if(r.status='200') 
-									{
-										
-										$.messager.show({
-											title : '提示',
-											msg : r.msg
-										});
-										store_datagrid.datagrid('reload');
-										d.dialog('destroy');
-									}
-									
-									else if(r.status='404'){
-										$.messager.alert({
-											title : '警告',
-											msg : r.msg
-										});
-									}else{
-										$.messager.show({
-											title : '提示',
-											msg : '服务器正忙,请稍后修改'
-										});
-									}
+								var r = result;
 								
-							}
+								if(r.status='200') 
+								{
+									
+									$.messager.show({
+										title : '提示',
+										msg : r.msg
+									});
+									store_datagrid.datagrid('reload');
+									d.dialog('destroy');
+								}
+								
+								else if(r.status='404'){
+									$.messager.alert({
+										title : '警告',
+										msg : r.msg
+									});
+								}else{
+									$.messager.show({
+										title : '提示',
+										msg : '服务器正忙,请稍后修改'
+									});
+								}
+							
+						}
 						});
+						
+						
 					}
 				
 				} ],
@@ -339,7 +343,7 @@
 					d.dialog("destroy");
 				},
 				onLoad : function() {
-					$('#editStore').form('load', node);
+					$('#editStore').form('load', '${pageContext.request.contextPath}/storeModel.action?id='+node.id);
 				}
 			});
 			
