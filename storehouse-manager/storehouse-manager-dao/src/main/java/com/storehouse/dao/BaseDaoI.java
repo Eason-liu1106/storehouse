@@ -46,5 +46,6 @@ public interface BaseDaoI<T> {
 	public List getHql(String hql);
 	
 	public Object judgeTOrF(String hql);
+	
 
 }

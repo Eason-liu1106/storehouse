@@ -226,11 +226,14 @@
 					iconCls : 'icon-edit',
 					handler : function() {
 						
-						$('#editstoreType').form('submit', {
+						$.ajax( {
 							url : '${pageContext.request.contextPath}/storeType/edit.action',
+							data: $('#editStoreType').serialize(),
+							dataType : 'JSON',
+							type: "POST",
 							success : function(result) {
 								
-									var r = $.parseJSON(result);
+									var r = result;
 									
 									if(r.status='200') 
 									{

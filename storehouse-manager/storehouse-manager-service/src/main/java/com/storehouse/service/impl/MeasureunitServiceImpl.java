@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +17,7 @@ import com.storehouse.common.pojo.StorehouseResult;
 
 import com.storehouse.dao.BaseDaoI;
 import com.storehouse.model.BaseModel;
+import com.storehouse.model.MeasureunitsModel;
 import com.storehouse.pojo.Measureunits;
 import com.storehouse.service.MeasureunitService;
 
@@ -70,16 +71,13 @@ public class MeasureunitServiceImpl extends BaseServiceImpl implements Measureun
 		// TODO Auto-generated method stub
 		StorehouseResult storehouseResult=new StorehouseResult();
 		
-		
 		ms.setModifydatetime(new Timestamp(new Date().getTime()));
-	
-		
-		if(measureunitDao.update((Measureunits) ms))
+		if(measureunitDao.update((Measureunits)ms))
 		{
-		
-		storehouseResult.setData(ms);
-		storehouseResult.setMsg("修改成功");
-		storehouseResult.setStatus(200);
+			
+			storehouseResult.setData(ms);
+			storehouseResult.setMsg("修改成功");
+			storehouseResult.setStatus(200);
 	
 		}else{
 			storehouseResult.setStatus(404);

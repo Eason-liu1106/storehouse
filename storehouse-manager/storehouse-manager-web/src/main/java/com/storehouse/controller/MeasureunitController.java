@@ -2,6 +2,9 @@ package com.storehouse.controller;
 
 
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -55,7 +58,6 @@ public class MeasureunitController {
 	@RequestMapping("/measureunit/edit")
 	@ResponseBody
 	public StorehouseResult  editMeasureunit(Measureunits ms){
-	
 		return measureunitService.update(ms);
 		
 	}

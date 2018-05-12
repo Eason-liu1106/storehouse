@@ -207,16 +207,7 @@ $(function() {
 	})
 
 });
-/**
- * @author 孙宇
- * 
- * @requires jQuery,EasyUI,jQuery cookie plugin
- * 
- * 更换EasyUI主题的方法
- * 
- * @param themeName
- *            主题名称
- */
+
  changeTheme = function(themeName){  
 	
 	 var $easyuiTheme = $('#easyuiTheme');

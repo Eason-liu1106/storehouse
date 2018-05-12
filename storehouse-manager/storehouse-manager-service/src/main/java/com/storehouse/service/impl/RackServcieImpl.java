@@ -22,7 +22,7 @@ import com.storehouse.model.BaseModel;
 import com.storehouse.model.RackModel;
 import com.storehouse.pojo.InItemDetail;
 import com.storehouse.pojo.Rack;
-
+import com.storehouse.pojo.Stores;
 import com.storehouse.pojo.custom.RackCustom;
 import com.storehouse.service.RackService;
 @Service("rackService")
@@ -111,18 +111,26 @@ public class RackServcieImpl  extends BaseServiceImpl implements RackService {
 	public StorehouseResult delete(Serializable ids) {
 		// TODO Auto-generated method stub
 		StorehouseResult storehouseResult=new StorehouseResult();
-		for (String id : ((String) ids).split(",")) {
-			Rack s = rackDao.get(Rack.class, id);
-			if (s != null) {
-				rackDao.delete(s);
-				storehouseResult.setMsg("删除成功");
-				storehouseResult.setStatus(200);
-			}
-			else {
-				storehouseResult.setMsg("删除失败");
-				storehouseResult.setStatus(404);
+		String hql=" from Stores where rack_id='"+ids+"'";
+		List<Stores> resultList=rackDao.getHql(hql);
+		if(resultList.size()>0){
+			storehouseResult.setMsg("该货架正在使用，无法删除");
+			storehouseResult.setStatus(404);
+		}else{
+			for (String id : ((String) ids).split(",")) {
+				Rack s = rackDao.get(Rack.class, id);
+				if (s != null) {
+					rackDao.delete(s);
+					storehouseResult.setMsg("删除成功");
+					storehouseResult.setStatus(200);
+				}
+				else {
+					storehouseResult.setMsg("删除失败");
+					storehouseResult.setStatus(404);
+				}
 			}
 		}
+		
 		return storehouseResult;
 	}
 	@Override

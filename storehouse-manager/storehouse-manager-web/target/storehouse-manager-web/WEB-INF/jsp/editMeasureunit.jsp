@@ -1,7 +1,7 @@
 	<%@ page language="java" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>   
          
       <script type="text/javascript" charset="utf-8">        
-
+   
 </script>
 
  <div style="padding:10px 60px 20px 60px">  
@@ -16,7 +16,7 @@
              <tr>                  
                  <td><input   hidden="true"  type="text" name="id"  data-options="required:true"></input></td>  
              </tr>  
-              
+             
            
          </table>  
      </form>  

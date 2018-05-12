@@ -193,7 +193,6 @@ public class BaseDaoImpl<T> implements BaseDaoI<T> {
 		return null;
 	}
 
-	
-	
+
 
 }

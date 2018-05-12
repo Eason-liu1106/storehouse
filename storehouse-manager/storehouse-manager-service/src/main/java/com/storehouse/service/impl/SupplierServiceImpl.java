@@ -69,7 +69,7 @@ public class SupplierServiceImpl extends BaseServiceImpl implements SupplierServ
 		// TODO Auto-generated method stub
 		StorehouseResult storehouseResult=new StorehouseResult();
 	
-	
+//		Supplier.setCreatedatetime();
 		Supplier.setModifydatetime(new Timestamp(new Date().getTime()));
 	
 		if(SuppliersDao.update((Suppliers) Supplier))

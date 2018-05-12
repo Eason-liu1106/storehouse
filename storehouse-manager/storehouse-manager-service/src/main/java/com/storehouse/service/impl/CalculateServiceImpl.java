@@ -19,7 +19,7 @@ import com.storehouse.dao.BaseDaoI;
 import com.storehouse.model.BaseModel;
 import com.storehouse.model.CalculateModel;
 import com.storehouse.pojo.Calculate;
-
+import com.storehouse.pojo.Stores;
 import com.storehouse.pojo.custom.CalculateCustom;
 
 import com.storehouse.service.CalculateService;
@@ -107,16 +107,23 @@ public class CalculateServiceImpl extends BaseServiceImpl implements CalculateSe
 	public StorehouseResult delete(Serializable ids) {
 		// TODO Auto-generated method stub
 		StorehouseResult storehouseResult=new StorehouseResult();
-		for (String id : ((String) ids).split(",")) {
-			Calculate s = calculateDao.get(Calculate.class, id);
-			if (s != null) {
-				calculateDao.delete(s);
-				storehouseResult.setMsg("删除成功");
-				storehouseResult.setStatus(200);
-			}
-			else {
-				storehouseResult.setMsg("删除失败");
-				storehouseResult.setStatus(404);
+		String hql=" from Stores where calculate_id='"+ids+"'";
+		List<Stores> resultList=calculateDao.getHql(hql);
+		if(resultList.size()>0){
+			storehouseResult.setMsg("该计费方式正在使用，无法删除");
+			storehouseResult.setStatus(404);
+		}else{
+			for (String id : ((String) ids).split(",")) {
+				Calculate s = calculateDao.get(Calculate.class, id);
+				if (s != null) {
+					calculateDao.delete(s);
+					storehouseResult.setMsg("删除成功");
+					storehouseResult.setStatus(200);
+				}
+				else {
+					storehouseResult.setMsg("删除失败");
+					storehouseResult.setStatus(404);
+				}
 			}
 		}
 		return storehouseResult;
