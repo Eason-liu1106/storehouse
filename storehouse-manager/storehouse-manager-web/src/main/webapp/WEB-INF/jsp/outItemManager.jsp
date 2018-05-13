@@ -40,6 +40,7 @@
 				field : 'name',
 				width : 100,
 				sortable : true,
+				hidden: true
 				
 			} ] ],
 			columns : [ [ {
