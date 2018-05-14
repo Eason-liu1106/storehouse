@@ -73,6 +73,7 @@ public class UserServiceImpl  extends BaseServiceImpl implements UserService {
 		String  s=null;
 		SysUser user=userDao.get(SysUser.class, usermodel.getId());
 		BeanUtils.copyProperties(usermodel, user);
+		user.setPassword(new MD5().getMD5ofStr(usermodel.getPassword()));
 		if(userDao.update(user)){
 			storehouseResult.setMsg("修改成功");
 			storehouseResult.setStatus(200);
@@ -168,10 +169,11 @@ public class UserServiceImpl  extends BaseServiceImpl implements UserService {
 			storehouseResult.setStatus(404);
 		}
 		String[] ids=usermodel.getRoleIds().split(",");
+		userrole.setId(IDUtils.genItemId()+"");
+		userrole.setSysUserId(user.getId());
 		for(String id:ids){
 			userrole.setSysRoleId(id);
-			userrole.setId(IDUtils.genItemId()+"");
-			userrole.setSysUserId(user.getId());
+			
 			if(password.equals(repassword)){
 				String s2=(String)userroleDao.save(userrole);
 				if(s2.length()>0)
@@ -188,9 +190,6 @@ public class UserServiceImpl  extends BaseServiceImpl implements UserService {
 				storehouseResult.setStatus(404);
 			}
 		}
-		
-		
-		
 		return storehouseResult;
 	}
 	public void changeModel(List<SysUser> users,List <UserModel> usermodels){

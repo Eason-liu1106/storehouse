@@ -47,7 +47,7 @@
 				}
 			}, {
 				field : 'salt',
-				title : '盐',
+				title : '备注',
 				width : 100,
 				sortable : true
 			} ,{
@@ -198,7 +198,7 @@
 				names.push(rows[i].name);
 			}
 			$.messager.show({
-				msg : '只能择一个管理员进行编辑！您已经选择了【' + names.join(',') + '】' + rows.length + '个管理员',
+				msg : '只能择一个管理员进行编辑！您已经选择了【' + rows.length + '】个管理员',
 				title : '提示'
 			});
 		} else if (rows.length == 1) {

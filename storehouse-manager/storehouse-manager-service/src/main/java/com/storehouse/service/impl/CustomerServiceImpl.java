@@ -18,6 +18,7 @@ import com.storehouse.common.utils.IDUtils;
 import com.storehouse.dao.BaseDaoI;
 import com.storehouse.model.BaseModel;
 import com.storehouse.pojo.Customers;
+import com.storehouse.pojo.InItemDetail;
 import com.storehouse.service.CustomerService;
 
 
@@ -91,6 +92,7 @@ public class CustomerServiceImpl extends BaseServiceImpl implements CustomerServ
 		// TODO Auto-generated method stub
 		StorehouseResult storehouseResult=new StorehouseResult();
 		for (String id : ((String) ids).split(",")) {
+			
 			Customers s = CustomersDao.get(Customers.class, Integer.valueOf(id));
 			if (s != null) {
 				CustomersDao.delete(s);

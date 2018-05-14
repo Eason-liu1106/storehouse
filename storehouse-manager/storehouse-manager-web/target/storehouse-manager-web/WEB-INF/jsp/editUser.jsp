@@ -60,8 +60,8 @@ var roleDatagrid= $('#roleDatagrid').combogrid({
                  <td><input class="easyui-textbox" type="text" name="locked" missingMessage="请填写状态" data-options="required:true"></input></td>  
              </tr> 
               <tr>  
-                 <td>盐:</td>  
-                 <td><input class="easyui-textbox" type="text" name="salt" missingMessage="请填写密码" data-options="required:true"></input></td>  
+                 <td>备注:</td>  
+                 <td><input class="easyui-textbox" type="text" name="salt" missingMessage="请填写备注" ></input></td>  
              </tr> 
              <tr>  
                  <td>角色选择:</td>  

@@ -18,6 +18,7 @@ import com.storehouse.common.pojo.StorehouseResult;
 import com.storehouse.dao.BaseDaoI;
 import com.storehouse.model.BaseModel;
 import com.storehouse.model.MeasureunitsModel;
+import com.storehouse.pojo.InItemDetail;
 import com.storehouse.pojo.Measureunits;
 import com.storehouse.service.MeasureunitService;
 
@@ -94,16 +95,24 @@ public class MeasureunitServiceImpl extends BaseServiceImpl implements Measureun
 		int sid=0;
 		for (String id : ((String) ids).split(",")) {
 			sid=Integer.parseInt(id);
-			Measureunits s = measureunitDao.get(Measureunits.class, sid);
-			if (s != null) {
-				measureunitDao.delete(s);
-				storehouseResult.setMsg("删除成功");
-				storehouseResult.setStatus(200);
-			}
-			else {
-				storehouseResult.setMsg("删除失败");
+			String hql=" from InItemDetail where measureunit_id="+id;
+			List<InItemDetail> inItemDetailList=measureunitDao.getHql(hql);
+			if(inItemDetailList.size()>0){
+				storehouseResult.setMsg("该计量单位正在被使用，无法删除，若要删除请先将所属商品删除");
 				storehouseResult.setStatus(404);
+			}else{
+				Measureunits s = measureunitDao.get(Measureunits.class, sid);
+				if (s != null) {
+					measureunitDao.delete(s);
+					storehouseResult.setMsg("删除成功");
+					storehouseResult.setStatus(200);
+				}
+				else {
+					storehouseResult.setMsg("删除失败");
+					storehouseResult.setStatus(404);
+				}
 			}
+			
 		}
 		return storehouseResult;
 	}

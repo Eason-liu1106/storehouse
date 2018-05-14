@@ -17,6 +17,7 @@ import com.storehouse.common.pojo.StorehouseResult;
 import com.storehouse.common.utils.IDUtils;
 import com.storehouse.dao.BaseDaoI;
 import com.storehouse.model.BaseModel;
+import com.storehouse.pojo.InItemDetail;
 import com.storehouse.pojo.Suppliers;
 import com.storehouse.service.SupplierService;
 
@@ -91,16 +92,24 @@ public class SupplierServiceImpl extends BaseServiceImpl implements SupplierServ
 		// TODO Auto-generated method stub
 		StorehouseResult storehouseResult=new StorehouseResult();
 		for (String id : ((String) ids).split(",")) {
-			Suppliers s = SuppliersDao.get(Suppliers.class, Integer.valueOf(id));
-			if (s != null) {
-				SuppliersDao.delete(s);
-				storehouseResult.setMsg("删除成功");
-				storehouseResult.setStatus(200);
-			}
-			else {
-				storehouseResult.setMsg("删除失败");
+			String hql=" from InItemDetail where supplier_id="+id;
+			List<InItemDetail> inItemDetailList=SuppliersDao.getHql(hql);
+			if(inItemDetailList.size()>0){
+				storehouseResult.setMsg("该供应商正在被使用，无法删除！若要删除请先将所属商品删除");
 				storehouseResult.setStatus(404);
+			}else{
+				Suppliers s = SuppliersDao.get(Suppliers.class, Integer.valueOf(id));
+				if (s != null) {
+					SuppliersDao.delete(s);
+					storehouseResult.setMsg("删除成功");
+					storehouseResult.setStatus(200);
+				}
+				else {
+					storehouseResult.setMsg("删除失败");
+					storehouseResult.setStatus(404);
+				}
 			}
+			
 		}
 		return storehouseResult;
 	}
